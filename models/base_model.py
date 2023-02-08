@@ -7,7 +7,7 @@ import uuid
 class BaseModel:
     """ Represent Base class """
 
-    def __init__(self, id=None, created_at=None, updated_at=None):
+    def __init__(self):
         """ Initialize a base class
 
         Args:
