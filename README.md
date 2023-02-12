@@ -8,4 +8,4 @@ A command interpreter to manipulate data without a visual interface, like in a S
 	* manage (create, update, destroy, etc) objects via a console / command interpreter
 	* store and persist objects to a file (JSON file)
 
-
+<<
