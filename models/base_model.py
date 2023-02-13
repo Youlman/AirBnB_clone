@@ -2,6 +2,7 @@
 """ class BaseModel base class attributes/methods for other classes"""
 from datetime import datetime
 from uuid import uuid4
+import models
 
 
 class BaseModel:
@@ -26,13 +27,17 @@ class BaseModel:
                     continue
                 else:
                     if key == "created_at" or key == "updated_at":
-                        self.__dict__[key] = datetime.strptime(value, time_format)
+                        self.__dict__[key] = datetime.strptime(value,
+                                                               time_format)
                     else:
                         self.__dict__[key] = value
+        else:
+            models.storage.new(self)
 
     def save(self):
         """Update the attribute updated_at with the current time """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def __str__(self):
         """ Return the print and str representation of Base model """
